@@ -7,8 +7,8 @@
 using namespace std;
 
 enum ClassCharacter {
-	Mage,
-	Warrior
+	Mage = 1,
+	Warrior = 2
 };
 
 void DZ1();

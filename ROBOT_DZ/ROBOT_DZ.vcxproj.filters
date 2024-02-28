@@ -27,9 +27,15 @@
     <ClCompile Include="DZ1.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="DZ3.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header_DZ2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header_DZ3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
