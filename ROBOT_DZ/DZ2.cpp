@@ -1,6 +1,7 @@
-#include"Header_DZ2.h"
+#include"DZ2.h"
 
-void MaxDamage(array<int, 5> arr) {
+void MaxDamage(array<int, 5> &arr) {
+	cout << arr.size();
 	int maxIndex = 0;
 	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]) - 1; i++)
 	{

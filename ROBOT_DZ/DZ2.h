@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void MaxDamage(array<int, 5> arr);
+void MaxDamage(array<int, 5> &arr);
 
 void MinDamage(array<int, 5> arr);
 

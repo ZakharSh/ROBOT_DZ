@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Header_DZ1.h"
+#include "DZ1.h"
 #include<iostream>
 #include <random>
 #include <vector>

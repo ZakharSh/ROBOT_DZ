@@ -21,7 +21,7 @@
     <ClCompile Include="DZ2.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="Header_DZ1.h">
+    <ClCompile Include="DZ1.h">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="DZ1.cpp">
@@ -32,10 +32,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header_DZ2.h">
+    <ClInclude Include="DZ2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header_DZ3.h">
+    <ClInclude Include="DZ3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

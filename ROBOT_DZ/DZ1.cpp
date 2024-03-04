@@ -1,4 +1,4 @@
-#include"Header_DZ1.h"
+#include"DZ1.h"
 
 void DZ1() {
 	cout << "Create character" << endl;
