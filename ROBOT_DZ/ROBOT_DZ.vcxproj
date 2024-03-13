@@ -132,12 +132,14 @@
     <ClCompile Include="DZ3.cpp" />
     <ClCompile Include="DZ1.h" />
     <ClCompile Include="DZ4.cpp" />
+    <ClCompile Include="DZ5.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DZ3.h" />
     <ClInclude Include="DZ2.h" />
     <ClInclude Include="DZ4.h" />
+    <ClInclude Include="DZ5.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
