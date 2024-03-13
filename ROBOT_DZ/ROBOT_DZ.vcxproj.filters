@@ -30,12 +30,18 @@
     <ClCompile Include="DZ3.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="DZ4.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DZ2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DZ3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DZ4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

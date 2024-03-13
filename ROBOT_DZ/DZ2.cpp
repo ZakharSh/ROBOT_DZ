@@ -1,9 +1,8 @@
 #include"DZ2.h"
 
 void MaxDamage(array<int, 5> &arr) {
-	cout << arr.size();
 	int maxIndex = 0;
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]) - 1; i++)
+	for (int i = 0; i < arr.size() - 1; i++)
 	{
 		if (arr[maxIndex] < arr[i + 1]) {
 			maxIndex = i + 1;
@@ -13,9 +12,9 @@ void MaxDamage(array<int, 5> &arr) {
 }
 
 
-void MinDamage(array<int, 5> arr) {
+void MinDamage(array<int, 5> &arr) {
 	int minIndex = 0;
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]) - 1; i++)
+	for (int i = 0; i < arr.size() - 1; i++)
 	{
 		if (arr[minIndex] > 0) {
 			if (arr[minIndex] > arr[i + 1] && arr[i + 1] > 0) {
@@ -30,9 +29,9 @@ void MinDamage(array<int, 5> arr) {
 	cout << endl << minIndex + 1 << " Character casted the less dangerous spell" << endl;
 }
 
-void Healing(array<int, 5> arr) {
+void Healing(array<int, 5> &arr) {
 	int heal = 0;
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]) - 1; i++)
+	for (int i = 0; i < arr.size() - 1; i++)
 	{
 		if (arr[heal] < 0) {
 
@@ -49,10 +48,10 @@ void Healing(array<int, 5> arr) {
 
 }
 
-void Suma(array<int, 5> arr, int damageHeal) {
+void Suma(array<int, 5> &arr, int damageHeal) {
 	int suma = 0;
 	if (damageHeal == 1) {
-		for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+		for (int i = 0; i < arr.size(); i++)
 		{
 			if (arr[i] > 0) {
 				suma = suma + arr[i];
@@ -63,7 +62,7 @@ void Suma(array<int, 5> arr, int damageHeal) {
 	}
 	else
 	{
-		for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+		for (int i = 0; i < arr.size(); i++)
 		{
 			if (arr[i] < 0) {
 				suma = suma + arr[i];
@@ -74,8 +73,8 @@ void Suma(array<int, 5> arr, int damageHeal) {
 }
 
 
-void IsZero(array<int, 5> arr) {
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+void IsZero(array<int, 5> &arr) {
+	for (int i = 0; i < arr.size(); i++)
 	{
 		if (arr[i] == 0) {
 			cout << "OPA NOLIK" << endl;
@@ -91,7 +90,7 @@ void DZ2() {
 
 	array<int, 5> arr = { 0 };
 	cout << "5 Characters are going to cast spells on you" << endl;
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
+	for (int i = 0; i < arr.size(); i++) {
 		cout << endl << i + 1 << " Character is casting the spell on you: ";
 		cin >> arr[i];
 	}
