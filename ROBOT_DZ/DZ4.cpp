@@ -4,7 +4,7 @@
 struct Player {
 
 	string name;
-	float power;
+	float power = 0;
 };
 
 map<string, vector<Player>> clanData;

@@ -36,6 +36,9 @@
     <ClCompile Include="DZ5.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="DZ6.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DZ2.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DZ5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DZ6.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
