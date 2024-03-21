@@ -53,23 +53,27 @@ private:
 
 class NewCharacter {
 public:
-	void SetWeapon(Weapon* weapon) { MyWeapon = weapon; }
+	void SetWeapon(unique_ptr<Weapon> weapon) { MyWeapon = move(weapon); }
 
-	Weapon* GetWeapon() const { return MyWeapon; }
+	const unique_ptr<Weapon>& GetWeapon() const { return MyWeapon; }
 
 	float GetModifiedDamage(float damage) const {
-		if (MyModifier)
-			return MyModifier->CalculateDamage(damage);
-		else
-			return damage;
+		if (shared_ptr<DamageModifier> sharedModifier = MyModifier.lock())
+		{
+			if (sharedModifier)
+				return sharedModifier->CalculateDamage(damage);
+			else
+				return damage;
+		}
+
 	}
 
-	void SetDamageModifier(DamageModifier* modifier) { MyModifier = modifier; }
+	void SetDamageModifier(const shared_ptr<DamageModifier>& modifier) { MyModifier = modifier; }
 
 
 private:
-	Weapon* MyWeapon;
-	DamageModifier* MyModifier;
+	unique_ptr<Weapon> MyWeapon;
+	weak_ptr<DamageModifier> MyModifier;
 
 };
 
@@ -119,21 +123,17 @@ private:
 
 void DZ6() {
 
-	NewCharacter Bob;
-	Weapon* greatsword = new Greatsword;
-	Bob.SetWeapon(greatsword);
-	cout << "Bob`s weapon is " << Bob.GetWeapon()->GetName() << endl << "Damage = " << Bob.GetWeapon()->GetDamage() << endl;
+	unique_ptr<NewCharacter> Bob = make_unique<NewCharacter>();
+	unique_ptr<Weapon> greatsword = make_unique<Greatsword>();
+	Bob->SetWeapon(move(greatsword));
+	cout << "Bob`s weapon is " << Bob->GetWeapon()->GetName() << endl << "Damage = " << Bob->GetWeapon()->GetDamage() << endl;
 
-	DamageModifier* modifier = new ParityDamageModifier(2);
-
-
-	Bob.SetDamageModifier(modifier);
+	shared_ptr<DamageModifier> modifier = make_shared<ParityDamageModifier>(2);
 
 
-	cout << "Modified Damage: " << Bob.GetModifiedDamage(Bob.GetWeapon()->GetDamage());
+	Bob->SetDamageModifier(modifier);
 
-	delete greatsword;
-	delete modifier;
 
+	cout << "Modified Damage: " << Bob->GetModifiedDamage(Bob->GetWeapon()->GetDamage());
 
 }
